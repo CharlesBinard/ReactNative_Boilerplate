@@ -1,21 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { SafeAreaView } from "react-native";
-import { Layout, Text, Button } from "@ui-kitten/components";
+import { Layout } from "@ui-kitten/components";
 
 import style from "./style";
 import TopNavigation from "../navigation/TopNavigation";
+import GifsContainer from "../containers/Gifs/GifsContainer";
 
 const Home = () => {
-    const [total, setTotal] = useState(0);
-
     return (
         <SafeAreaView style={style.areaView}>
             <TopNavigation />
             <Layout style={style.container}>
-                <Text>Only {total} click !</Text>
-                <Button onPress={() => setTotal(total + 1)}>
-                    click for add 1
-                </Button>
+                <GifsContainer />
             </Layout>
         </SafeAreaView>
     );
