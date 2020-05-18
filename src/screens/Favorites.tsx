@@ -1,20 +1,23 @@
-import React from "react";
-import { Layout, Text } from "@ui-kitten/components";
-import { API_KEY, API_URL } from "react-native-dotenv";
+import React, { FC } from "react";
+import { Layout } from "@ui-kitten/components";
 import style from "./style";
 import { SafeAreaView } from "react-native";
 import TopNavigation from "../navigation/TopNavigation";
+import FavContainer from "../containers/Fav/FavContainer";
 
-const About = () => {
+type Props = {
+    navigation: any;
+};
+
+const Favorites: FC<Props> = ({ navigation }) => {
     return (
         <SafeAreaView style={style.areaView}>
             <TopNavigation />
             <Layout style={style.container}>
-                <Text>Api used is: {API_URL}</Text>
-                <Text>With this API Key: {API_KEY}</Text>
+                <FavContainer navigation={navigation} />
             </Layout>
         </SafeAreaView>
     );
 };
 
-export default About;
+export default Favorites;

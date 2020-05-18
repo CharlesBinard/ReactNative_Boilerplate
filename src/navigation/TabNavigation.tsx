@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BottomNavigation, BottomNavigationTab } from "@ui-kitten/components";
 import Home from "../screens/Home";
 import About from "../screens/About";
+import Favorites from "../screens/Favorites";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +17,7 @@ const BottomTabBar: FC<Props> = ({ navigation, state }) => (
         selectedIndex={state.index}
         onSelect={(index) => navigation.navigate(state.routeNames[index])}>
         <BottomNavigationTab title="Home" />
+        <BottomNavigationTab title="Favorites" />
         <BottomNavigationTab title="About" />
     </BottomNavigation>
 );
@@ -23,6 +25,7 @@ const BottomTabBar: FC<Props> = ({ navigation, state }) => (
 const TabNavigation = () => (
     <Tab.Navigator tabBar={(props) => <BottomTabBar {...props} />}>
         <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Favorites" component={Favorites} />
         <Tab.Screen name="About" component={About} />
     </Tab.Navigator>
 );

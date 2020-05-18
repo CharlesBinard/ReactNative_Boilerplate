@@ -68,7 +68,7 @@ export default TopNavigationAccessoriesShowcase;
 
 const styles = StyleSheet.create({
     container: {
-        minHeight: 128,
-        paddingTop: 30,
+        minHeight: 100,
+        paddingTop: 40,
     },
 });
